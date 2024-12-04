@@ -1,12 +1,13 @@
 import days.Day1
 import days.Day2
+import days.Day3
 
 
 fun main(args: Array<String>) {
     if (args.isNotEmpty() && args[0] == "-all") {
         // run each day and add a separator between them
+        println("=".repeat(50))
         days.forEach {
-            println("=".repeat(50))
             solveAndPrintDay(it)
             println("=".repeat(50))
         }
@@ -38,6 +39,7 @@ fun solveAndPrintDay(day: Day) {
 }
 
 val days = listOf(
-     Day1(),
+    Day1(),
     Day2(),
+    Day3()
 )

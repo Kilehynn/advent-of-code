@@ -8,11 +8,11 @@ class Day1: Day {
     val rightColumn = ArrayList<Int>()
     val rightOccurrence = HashMap<Int, Int>()
 
-    override fun solvePart1(input: String): String {
+    override fun solvePart1(input: String): Int {
         parseInputPart1(input)
         return leftColumn.zip(rightColumn).sumOf {
             (left, right) -> abs(left - right)
-        }.toString()
+        }
     }
 
     private fun parseInputPart1(input: String) {
@@ -26,10 +26,10 @@ class Day1: Day {
         rightColumn.sort()
     }
 
-    override fun solvePart2(input: String): String {
+    override fun solvePart2(input: String): Int {
         leftColumn.clear()
         parseInputPart2(input)
-        return leftColumn.sumOf { it * (rightOccurrence[it]?:0) }.toString()
+        return leftColumn.sumOf { it * (rightOccurrence[it]?:0) }
 
     }
 

@@ -8,8 +8,20 @@ class Day1: Day {
     val rightColumn = ArrayList<Int>()
     val rightOccurrence = HashMap<Int, Int>()
 
-    override fun solvePart1(input: String): Int {
-        parseInputPart1(input)
+    init{
+        getInput().split(System.lineSeparator()).map {
+            it.split(Regex("\\s+"))
+        }.forEach {
+            leftColumn.add(it[0].toInt())
+            rightColumn.add(it[1].toInt())
+            rightOccurrence.putIfAbsent(it[1].toInt(), 0)
+            rightOccurrence[it[1].toInt()] = rightOccurrence[it[1].toInt()]!! + 1
+        }
+        leftColumn.sort()
+        rightColumn.sort()
+    }
+
+    override fun solvePart1(): Int {
         return leftColumn.zip(rightColumn).sumOf {
             (left, right) -> abs(left - right)
         }
@@ -26,20 +38,7 @@ class Day1: Day {
         rightColumn.sort()
     }
 
-    override fun solvePart2(input: String): Int {
-        leftColumn.clear()
-        parseInputPart2(input)
+    override fun solvePart2(): Int {
         return leftColumn.sumOf { it * (rightOccurrence[it]?:0) }
-
-    }
-
-    private fun parseInputPart2(input: String) {
-        input.split(System.lineSeparator()).map {
-            it.split(Regex("\\s+")).toList()
-        }.forEach() {
-            leftColumn.add(it[0].toInt())
-            rightOccurrence.putIfAbsent(it[1].toInt(), 0)
-            rightOccurrence[it[1].toInt()] = rightOccurrence[it[1].toInt()]!! + 1
-        }
     }
 }

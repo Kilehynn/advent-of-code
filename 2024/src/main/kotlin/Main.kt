@@ -1,6 +1,4 @@
-import days.Day1
-import days.Day2
-import days.Day3
+import days.*
 
 
 fun main(args: Array<String>) {
@@ -21,15 +19,14 @@ fun solveAndPrintDay(day: Day) {
 
     println("\u001B[34mDay $dayNumber\u001B[0m")
 
-    val input = day.getInput()
     // time how long it takes to solve part 1
     var start = System.currentTimeMillis()
-    val part1 = day.solvePart1(input)
+    val part1 = day.solvePart1()
     var end = System.currentTimeMillis()
     val part1Time = end - start
 
     start = System.currentTimeMillis()
-    val part2 = day.solvePart2(input)
+    val part2 = day.solvePart2()
     end = System.currentTimeMillis()
     val part2Time = end - start
 
@@ -41,5 +38,7 @@ fun solveAndPrintDay(day: Day) {
 val days = listOf(
     Day1(),
     Day2(),
-    Day3()
+    Day3(),
+    Day4(),
+    Day5()
 )

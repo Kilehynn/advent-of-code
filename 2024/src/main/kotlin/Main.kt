@@ -39,4 +39,5 @@ val days = listOf(
     Day4(),
     Day5(),
     Day6(),
+    Day7(),
 )

@@ -15,11 +15,8 @@ fun main(args: Array<String>) {
 }
 
 fun solveAndPrintDay(day: Day) {
-    val dayNumber = day.getDay().toString()
+    println("\u001B[34mDay ${day.getDay()}\u001B[0m")
 
-    println("\u001B[34mDay $dayNumber\u001B[0m")
-
-    // time how long it takes to solve part 1
     var start = System.currentTimeMillis()
     val part1 = day.solvePart1()
     var end = System.currentTimeMillis()
@@ -40,5 +37,6 @@ val days = listOf(
     Day2(),
     Day3(),
     Day4(),
-    Day5()
+    Day5(),
+    Day6(),
 )

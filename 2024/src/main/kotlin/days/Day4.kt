@@ -8,7 +8,7 @@ class Day4: Day {
     private var input: String
     private var nbCols: Int = 0
     private var nbLines: Int = 0
-    private val nextCharMap: Map<Char, Char> = mapOf(
+    private val nextCharMap = mapOf(
         'X' to 'M', 'M' to 'A', 'A' to 'S'
     )
 
@@ -70,10 +70,10 @@ class Day4: Day {
     }
 
     private fun findXMAS(x: Int, y: Int, letterToLookFor: Char = 'X', direction: DIRECTION): Int {
-        if (((direction === DIRECTION.BACKWARD || direction === DIRECTION.TOP_LEFT || direction === DIRECTION.BOTTOM_LEFT) && x < 0)
-            || ((direction === DIRECTION.FORWARD || direction === DIRECTION.TOP_RIGHT || direction === DIRECTION.BOTTOM_RIGHT) && x >= nbCols)
-            || ((direction === DIRECTION.UPWARD || direction === DIRECTION.TOP_RIGHT || direction === DIRECTION.TOP_LEFT) && y < 0)
-            || ((direction === DIRECTION.DOWNWARD || direction === DIRECTION.BOTTOM_LEFT || direction === DIRECTION.BOTTOM_RIGHT) && y >= nbLines)
+        if (((direction === DIRECTION.LEFT || direction === DIRECTION.TOP_LEFT || direction === DIRECTION.BOTTOM_LEFT) && x < 0)
+            || ((direction === DIRECTION.RIGHT || direction === DIRECTION.TOP_RIGHT || direction === DIRECTION.BOTTOM_RIGHT) && x >= nbCols)
+            || ((direction === DIRECTION.UP || direction === DIRECTION.TOP_RIGHT || direction === DIRECTION.TOP_LEFT) && y < 0)
+            || ((direction === DIRECTION.DOWN || direction === DIRECTION.BOTTOM_LEFT || direction === DIRECTION.BOTTOM_RIGHT) && y >= nbLines)
         ) return 0
 
         val pos = y * nbCols + x

@@ -18,7 +18,7 @@ fun solveAndPrintDay(day: Day) {
     println("\u001B[34mDay ${day.getDay()}\u001B[0m")
 
     var start = System.currentTimeMillis()
-    val part1 = day.solvePart1()
+    val part1 = day.solvePart1(true)
     var end = System.currentTimeMillis()
     val part1Time = end - start
 
@@ -41,4 +41,5 @@ val days = listOf(
     Day6(),
     Day7(),
     Day8(),
+    Day9(),
 )

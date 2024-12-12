@@ -40,10 +40,10 @@ class Day6 : Day {
         this.baseMap = Map(nbCols, nbLines, baseCoord, obstacles)
     }
 
-    override fun solvePart1(debug: Boolean): Int {
+    override fun solvePart1(debug: Boolean): Long {
         val part1Map = baseMap.copy()
         play(part1Map)
-        return part1Map.previousPositions.size
+        return part1Map.previousPositions.size.toLong()
     }
 
     private fun play(map: Map, stopIfLooping: Boolean = false): GameResult {
@@ -57,7 +57,7 @@ class Day6 : Day {
     }
 
 
-    override fun solvePart2(debug: Boolean): Int {
+    override fun solvePart2(debug: Boolean): Long {
         var numberOfPotentialObstacles = 0
         val newObstacles = mutableSetOf<Pair<Int, Int>>()
 
@@ -83,7 +83,7 @@ class Day6 : Day {
                 break
             }
         }
-        return numberOfPotentialObstacles
+        return numberOfPotentialObstacles.toLong()
     }
 
 }

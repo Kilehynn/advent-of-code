@@ -56,7 +56,7 @@ class Day8 : Day {
         }
     }
 
-    override fun solvePart1(debug: Boolean): Int {
+    override fun solvePart1(debug: Boolean): Long {
         val antinodePosition: MutableSet<Pair<Int, Int>> = mutableSetOf()
         antennasVector.forEach { (symbol, vectors) ->
             if (debug) {
@@ -95,10 +95,10 @@ class Day8 : Day {
             }
         }
 
-        return antinodePosition.size
+        return antinodePosition.size.toLong()
     }
 
-    override fun solvePart2(debug: Boolean): Int {
+    override fun solvePart2(debug: Boolean): Long {
         val antinodePosition: MutableSet<Pair<Int, Int>> = mutableSetOf()
         antennasVector.forEach { (symbol, vectors) ->
             if (debug) {
@@ -155,7 +155,7 @@ class Day8 : Day {
         }
         if (debug)
             renderMap(antinodePosition)
-        return antinodePosition.size
+        return antinodePosition.size.toLong()
     }
 
     private fun isAntinodeOutside(antinode: Pair<Int, Int>): Boolean {

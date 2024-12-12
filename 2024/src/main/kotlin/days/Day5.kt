@@ -23,21 +23,21 @@ class Day5 : Day {
             updates.add(line.split(",").map(Integer::parseInt).toList())
         }
     }
-    override fun solvePart1(debug: Boolean): Int {
-      return updates.filter(this::isUpdateValid).map { update-> update[update.size / 2] }.sumOf { it }
+    override fun solvePart1(debug: Boolean): Long {
+      return updates.filter(this::isUpdateValid).map { update-> update[update.size / 2] }.sumOf { it }.toLong()
     }
 
-    override fun solvePart2(debug: Boolean): Int {
+    override fun solvePart2(debug: Boolean): Long {
         updates.filterNot(this::isUpdateValid)
        return updates.filterNot(this::isUpdateValid).map { update ->
-            update.sortedWith { a, b ->
-                for (rule in rules) {
-                    if (rule.first == a && rule.second == b) return@sortedWith -1
-                    if (rule.first == b && rule.second == a) return@sortedWith 1
-                }
-                return@sortedWith 0
-            }
-        }.sumOf { update -> update[update.size / 2] }
+           update.sortedWith { a, b ->
+               for (rule in rules) {
+                   if (rule.first == a && rule.second == b) return@sortedWith -1
+                   if (rule.first == b && rule.second == a) return@sortedWith 1
+               }
+               return@sortedWith 0
+           }
+       }.sumOf { update -> update[update.size / 2] }.toLong()
     }
 
     fun isUpdateValid(update: List<Int>): Boolean {

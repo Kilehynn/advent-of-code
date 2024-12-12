@@ -18,10 +18,10 @@ class Day4: Day {
         nbCols = matrix[0].length
         this.input = getInput().replace(System.lineSeparator().toRegex(), "")
     }
-    override fun solvePart1(debug: Boolean): Int {
+    override fun solvePart1(debug: Boolean): Long {
         var x = 0
         var y = 0
-        var numberXmas = 0
+        var numberXmas : Long = 0
         while (y * nbCols + x < nbCols * nbLines) {
             val pos = y * nbCols + x
             if (input[pos] == 'X') {
@@ -40,10 +40,10 @@ class Day4: Day {
         return numberXmas
     }
 
-    override fun solvePart2(debug: Boolean): Int {
+    override fun solvePart2(debug: Boolean): Long {
         var x = 0
         var y = 0
-        var numberXmas = 0
+        var numberXmas : Long= 0
         while (y * nbCols + x < nbCols * nbLines) {
             val pos = y * nbCols + x
             if (input[pos] == 'A') {

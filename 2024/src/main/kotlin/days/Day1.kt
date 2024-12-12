@@ -21,24 +21,13 @@ class Day1: Day {
         rightColumn.sort()
     }
 
-    override fun solvePart1(): Int {
+    override fun solvePart1(debug: Boolean): Int {
         return leftColumn.zip(rightColumn).sumOf {
             (left, right) -> abs(left - right)
         }
     }
 
-    private fun parseInputPart1(input: String) {
-        input.split(System.lineSeparator()).map {
-            it.split(Regex("\\s+"))
-        }.forEach {
-            leftColumn.add(it[0].toInt())
-            rightColumn.add(it[1].toInt())
-        }
-        leftColumn.sort()
-        rightColumn.sort()
-    }
-
-    override fun solvePart2(): Int {
+    override fun solvePart2(debug: Boolean): Int {
         return leftColumn.sumOf { it * (rightOccurrence[it]?:0) }
     }
 }

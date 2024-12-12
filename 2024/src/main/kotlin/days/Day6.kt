@@ -40,7 +40,7 @@ class Day6 : Day {
         this.baseMap = Map(nbCols, nbLines, baseCoord, obstacles)
     }
 
-    override fun solvePart1(): Int {
+    override fun solvePart1(debug: Boolean): Int {
         val part1Map = baseMap.copy()
         play(part1Map)
         return part1Map.previousPositions.size
@@ -57,7 +57,7 @@ class Day6 : Day {
     }
 
 
-    override fun solvePart2(): Int {
+    override fun solvePart2(debug: Boolean): Int {
         var numberOfPotentialObstacles = 0
         val newObstacles = mutableSetOf<Pair<Int, Int>>()
 

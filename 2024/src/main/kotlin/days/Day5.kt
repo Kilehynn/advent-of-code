@@ -23,11 +23,11 @@ class Day5 : Day {
             updates.add(line.split(",").map(Integer::parseInt).toList())
         }
     }
-    override fun solvePart1(): Int {
+    override fun solvePart1(debug: Boolean): Int {
       return updates.filter(this::isUpdateValid).map { update-> update[update.size / 2] }.sumOf { it }
     }
 
-    override fun solvePart2(): Int {
+    override fun solvePart2(debug: Boolean): Int {
         updates.filterNot(this::isUpdateValid)
        return updates.filterNot(this::isUpdateValid).map { update ->
             update.sortedWith { a, b ->

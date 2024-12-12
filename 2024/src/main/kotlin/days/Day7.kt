@@ -53,7 +53,7 @@ class Day7 : Day {
         return 0.toBigInteger()
     }
 
-    override fun solvePart1(): Int {
+    override fun solvePart1(debug: Boolean): Int {
         val operators = listOf(
             "+" to { a: BigInteger, b: BigInteger -> a + b },
             "*" to { a: BigInteger, b: BigInteger -> a * b }
@@ -63,7 +63,7 @@ class Day7 : Day {
     }
 
 
-    override fun solvePart2(): Int {
+    override fun solvePart2(debug: Boolean): Int {
         val operators = listOf(
             "+" to { a: BigInteger, b: BigInteger -> a + b },
             "*" to { a: BigInteger, b: BigInteger -> a * b },
